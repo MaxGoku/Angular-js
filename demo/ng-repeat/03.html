@@ -26,7 +26,7 @@
 </head>
 
 <body ng-app="app" ng-controller="ctrl">
-    <p class="ng-cloak" ng-repeat="item in data" ng-class="{'red':true,'font':true}" ng-hide="true">{{item.name}}</p>
+    <p class="ng-cloak" ng-repeat="item in data" ng-class="{'red':true,'font':true}" ng-hide="item.name==2">{{item.name}}</p>
 
     <script src="../../node_modules/angular/angular.js"></script>
 
@@ -49,7 +49,7 @@
                 name: 1,
                 css: 'a'
             }, {
-                name: 1,
+                name: 2,
                 css: 'b'
             }, ];
         }]);
