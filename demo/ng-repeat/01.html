@@ -4,10 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+
+    <style>
+        p {
+            width: 200px;
+            background-color: red;
+        }
+    </style>
 </head>
 
-<body>
-    <script src=""></script>
+<body ng-app="app" ng-controller="ctrl">
+    <p ng-repeat="item in data">{{item.content}}</p>
+
+    <script src="../../node_modules/angular/angular.js"></script>
+
+    <script>
+        /*
+         *
+         */
+        var app = angular.module("app", []);
+        app.controller("ctrl", ["$scope", function(s) {
+            data = [1, 2, 3, 4, 5];
+        }]);
+    </script>
 </body>
 
 </html>
