@@ -8,13 +8,25 @@
     <style>
         p {
             width: 200px;
+            color: #ccc;
+        }
+        
+        .red {
             background-color: red;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .font {
+            color: #fff;
         }
     </style>
 </head>
 
 <body ng-app="app" ng-controller="ctrl">
-    <p ng-repeat="item in data">{{item.content}}</p>
+    <p ng-repeat="item in data" ng-class="{'a':'red','b':'green'}[item.css]">{{item.name}}</p>
 
     <script src="../../node_modules/angular/angular.js"></script>
 
@@ -24,7 +36,22 @@
          */
         var app = angular.module("app", []);
         app.controller("ctrl", ["$scope", function(s) {
-            data = [1, 2, 3, 4, 5];
+            s.data = [{
+                name: 1,
+                css: 'a'
+            }, {
+                name: 1,
+                css: 'b'
+            }, {
+                name: 1,
+                css: 'a'
+            }, {
+                name: 1,
+                css: 'a'
+            }, {
+                name: 1,
+                css: 'b'
+            }, ];
         }]);
     </script>
 </body>
