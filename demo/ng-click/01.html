@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+    <input type="button" ng-click="add($event)">
+    <p>{{sum}}</p>
+    <script src="../../node_modules/angular/angular.js"></script>
+    <script>
+        var app = angular.module("app", []);
+        app.controller("ctrl", function($scope) {
+            $scope.sum = 0;
+            $scope.add = function(e) {
+                console.log(e);
+                console.log(e.screenX);
+                $scope.sum++;
+            }
+        });
+    </script>
+</body>
+
+</html>
