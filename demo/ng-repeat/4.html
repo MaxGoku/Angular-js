@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        p {
+            width: 200px;
+            color: #ccc;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .font {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body ng-app="app" ng-controller="ctrl">
+    <p class="ng-cloak" ng-repeat="item in data" ng-class="{'red':true,'font':true}" ng-hide="item.name==2">{{item.name}}</p>
+
+    <script src="../../node_modules/angular/angular.js"></script>
+
+    <script>
+        /*
+         *
+         */
+        var app = angular.module("app", []);
+        app.controller("ctrl", ["$scope", function(s) {
+            s.data = [{
+                name: 2,
+                css: 'b'
+            }, {
+                name: 1,
+                css: 'b'
+            }, {
+                name: 1,
+                css: 'a'
+            }, {
+                name: 1,
+                css: 'a'
+            }, {
+                name: 2,
+                css: 'b'
+            }, ];
+        }]);
+    </script>
+</body>
+
+</html>
